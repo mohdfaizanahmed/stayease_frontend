@@ -3,7 +3,8 @@ import axios from "axios";
 const API = axios.create({
   // baseURL: "https://hostel-management-backend-g35l.onrender.com/api/auth", //backend url
   
-    baseURL: "http://localhost:5000/api/auth", // Use your local server
+    // baseURL: "http://localhost:5000/api/auth", // Use your local server
+    baseURL:"https://stayease-backend-6xbb.onrender.com/api/auth", // Use your local server
   
   
 });
