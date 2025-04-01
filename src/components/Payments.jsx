@@ -3,7 +3,7 @@ import API from '../api/axios'
 
 const Payment = () => {
   const [payments, setPayments] = useState([]);
-  const [totalPayments, setTotalPayments] = useState(0);
+   const [totalPayments, setTotalPayments] = useState(0);
   const [numberOfPayments, setNumberOfPayments] = useState(0);
 
   useEffect(() => {
@@ -70,7 +70,7 @@ const Payment = () => {
                     alt="PayPal"
                     className="w-8 h-8"
                   />
-                  <p className="ml-3 text-gray-800 font-medium">hosteledge@edge.com</p>
+                  <p className="ml-3 text-gray-800 font-medium">stayease@gmail.com</p>
                 </div>
                 <p className="text-sm text-gray-500 mt-1">Expiry 08/2025</p>
               </div>

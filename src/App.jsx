@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PageNotFound from "./errors/PageNotFound";
 import { useAuth } from "./services/AuthProvider";
 import StaffPage from "./pages/StaffPage";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   const { role } = useAuth();
@@ -15,6 +16,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/*" element={<HomePage />} />
+        <Route path="/aboutus" element={<AboutUs/>}/>
 
         <Route element={<ProtectedRoutes />}>
           {/* Validating admin only allowed route  */}
@@ -41,6 +43,7 @@ function App() {
             <Route path="/resident/*" element={<Navigate to="/" />} />
           )}
         </Route>
+        
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

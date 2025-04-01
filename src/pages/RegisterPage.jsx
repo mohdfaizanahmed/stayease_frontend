@@ -14,6 +14,7 @@ export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
+  const[role,setRole]=useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agreeToTerms, setAgreeToTerms] = useState(false);
@@ -41,7 +42,7 @@ export default function RegisterPage() {
     // Handle form submission to register user
     try {
       setIsLoading(true);
-      const res = await API.post("/register", { username, email, password });
+      const res = await API.post("/register", { username, email, password ,role});
       toast.success(res.data.message, "Redirecting to login page");
       localStorage.setItem(
         "userData",
@@ -147,6 +148,45 @@ export default function RegisterPage() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
+            </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Role
+              </label>
+              <div className="relative">
+  <label className="block text-sm font-medium text-gray-700 mb-2">
+    Role
+  </label>
+  <div className="flex gap-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="role"
+        value="resident"
+        checked={role === "resident"}
+        onChange={(e) => setRole(e.target.value)}
+        className="h-4 w-4 text-purple-600 border-gray-300 focus:ring-purple-500"
+      />
+      <span>Resident</span>
+    </label>
+
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="role"
+        value="staff"
+        checked={role === "staff"}
+        onChange={(e) => setRole(e.target.value)}
+        className="h-4 w-4 text-purple-600 border-gray-300 focus:ring-purple-500"
+      />
+      <span>Staff</span>
+    </label>
+  </div>
+</div>
+
             </div>
 
             <div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../services/AuthProvider";
 import logotext from "../assets/hosteledge logo.png";
-import kitswlogo from "../assets/kitswlogo.jpg"
+import kitswlogo from "../assets/kitswlogo.png"
 import { px } from "framer-motion";
 function SidePanel({ options, username, useremail }) {
   const location = useLocation();
@@ -17,9 +17,9 @@ function SidePanel({ options, username, useremail }) {
   return (
     <div className="flex flex-col items-center h-[47rem] bg-[#f5f7f9] rounded-tl-3xl">
        <div className="flex-shrink-0 justify-center items-center mt-2 rounded-tl-3xl">
-          <span className="flex justify-center items-center  bg-gradient-to-r from-green-200 to-[#f5f7f9] rounded-lg px-4 py-1">
-            <p className="text-[35px] color-red">StayEase</p>
-            <img className="w-auto h-8 lg:h-8 m-7" src={kitswlogo} alt="Logo"  />
+          <span className="flex justify-center items-center  bg-gradient-to-r from-red-200 to-[#f5f7f9] rounded-full px-4 py-1">
+            <p className="text-[33px] color-red">StayEase</p>
+            <img className=" lg:h-11 m-7" src={kitswlogo} alt="Logo"  />
           </span>
         </div>
 
