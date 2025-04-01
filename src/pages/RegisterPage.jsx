@@ -150,12 +150,7 @@ export default function RegisterPage() {
               </div>
             </div>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Role
-              </label>
+              
               <div className="relative">
   <label className="block text-sm font-medium text-gray-700 mb-2">
     Role
