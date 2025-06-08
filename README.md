@@ -8,20 +8,7 @@ The Hostel Management System is a comprehensive solution for managing hostel ope
 
 ## Demo Login Credentials
 
-### Admin
 
-USER: azardevacc@gmail.com  
- PASS: azardev@123
-
-### Staff
-
-USER: suriya@gmail.com  
- PASS: 123
-
-### Resident
-
-USER: 3rdmysteryunknown@gmail.com  
- PASS: 123
 
 ### PAYPAL Demo buyer Account
 
@@ -169,5 +156,7 @@ and many more...
 ## Contact
 
 For any inquiries or support, please contact:
+mfaizancse@gmail.com
++91 7995448610
 
 - **Email**: mnazar87540@gmail.com
