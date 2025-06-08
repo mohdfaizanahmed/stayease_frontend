@@ -10,7 +10,7 @@ function AdminDashboard() {
   const [expensesData, setExpensesData] = useState([]);
 
   useEffect(() => {
-    // console.log(dashboardData);
+    console.log(dashboardData);
   }, [dashboardData]);
   useEffect(()=>{
     console.log(revenueData);
@@ -24,7 +24,7 @@ function AdminDashboard() {
         console.log("API Response:", response.data); // Check if revenueData is present
   
         setDashboardData(response.data);
-        setRevenueData(response.data.revenueData?.reveData || []);
+        setRevenueData(response.data.revenueData.reveData);
 
         // setRevenueData(response.data.revenueData.reveData); // Ensure response contains reveData
         setExpensesData(response.data.expensesData.expenseData);
