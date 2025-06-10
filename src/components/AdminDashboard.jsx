@@ -142,75 +142,84 @@ function AdminDashboard() {
             </div>
           </section>
 
-          {/* Residents Dialog */}
-          {showResidents && (
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-              <div className="w-full max-w-2xl bg-gray-800 rounded-lg shadow-lg p-6 relative">
-                <button
-                  onClick={toggleResidents}
-                  className="absolute top-4 right-4 text-gray-300 hover:text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
+         {/* Residents Dialog */}
+{showResidents && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div className="w-full max-w-2xl bg-gray-800 rounded-lg shadow-lg p-6 relative">
+      <button
+        onClick={toggleResidents}
+        className="absolute top-4 right-4 text-gray-300 hover:text-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
 
-                <div className="flex justify-between items-center mb-4">
-                  <h1 className="text-2xl font-semibold text-white">
-                    Residents
-                  </h1>
-                  <span className="text-sm text-gray-300">
-                    {residentData.length || 0} Active
-                  </span>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-2xl font-semibold text-white">
+          Residents
+        </h1>
+        <span className="text-sm text-gray-300">
+          {residentData.length || 0} Active
+        </span>
+      </div>
+      <hr className="mb-6 border-gray-700" />
+      <div className="space-y-4 max-h-[60vh] overflow-y-auto">
+        {residentData.length > 0 ? (
+          residentData.map((resident, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-all duration-300 shadow-md border border-gray-600"
+            >
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white font-semibold shadow-md relative">
+                  <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-500 to-gray-700 rounded-full opacity-20"></span>
+                  {resident.username?.charAt(0) || "?"}
                 </div>
-                <hr className="mb-6 border-gray-700" />
-                <div className="space-y-4 max-h-[60vh] overflow-y-auto">
-                  {residentData.length > 0 ? (
-                    residentData.map((resident, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center justify-between p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-all duration-300 shadow-md border border-gray-600"
-                      >
-                        <div className="flex items-center space-x-4">
-                          <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white font-semibold shadow-md relative">
-                            <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-500 to-gray-700 rounded-full opacity-20"></span>
-                            {resident.username?.charAt(0) || "?"}
-                          </div>
-                          <div>
-                            <h3 className="text-white font-medium">
-                              {resident.username || "Unknown"}
-                            </h3>
-                            <p className="text-sm text-gray-300">
-                              Room: {resident.roomNumber}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-center">
-                          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-900 text-white border border-gray-600">
-                            <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-                            Active
-                          </span>
-                        </div>
-                      </div>
-                    ))
-                  ) : (
-                    <p className="text-gray-300">No residents available</p>
-                  )}
+                <div>
+                  <h3 className="text-white font-medium">
+                    {resident.username || "Unknown"}
+                  </h3>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-gray-300">Room:</span>
+                    {resident.roomNumber !== "Not Assigned" ? (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-900 text-blue-100">
+                        {resident.roomNumber}
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-600 text-gray-300">
+                        Not Assigned
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
+              <div className="flex items-center">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-900 text-white border border-gray-600">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                  Active
+                </span>
+              </div>
             </div>
-          )}
+          ))
+        ) : (
+          <p className="text-gray-300">No residents available</p>
+        )}
+      </div>
+    </div>
+  </div>
+)}
 
           {/* Expenses Dialog */}
           {showExpenses && (
